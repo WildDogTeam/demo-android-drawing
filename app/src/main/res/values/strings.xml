@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">多人协作实时绘图</string>
+
+    <string name="dummy_button">清空画板</string>
+    <string name="dummy_content">WILDDOG.COM\n    野狗实时</string>
+    <string name="color_button">画笔颜色</string>
+</resources>
