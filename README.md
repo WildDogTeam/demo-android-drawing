@@ -1,7 +1,7 @@
 # demo-android-drawing
 demo-android-drawing是一个基于 Wilddog android SDK 开发的实时画图 demo，可多终端登录来一起画画，同步显示图画效果。
 
-## 本地运行
+### 本地运行
 首先确认本机已经安装 [Android] (http://developer.android.com/index.html)运行环境和 Andriod Studio 开发环境 ，然后执行下列指令：
 
 ```
