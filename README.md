@@ -14,7 +14,7 @@ cd  demo-android-drawing
 
 ### 注册 Wilddog
 
-Wildchat 需要 Wilddog 来同步和存储数据。您可以在这里[注册](https://www.wilddog.com/my-account/signup)一个免费帐户。
+demo-android-drawing 需要 Wilddog 来同步和存储数据。您可以在这里[注册](https://www.wilddog.com/my-account/signup)一个免费帐户。
 
 ### 更多示例
 
