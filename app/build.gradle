@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "app.android.wilddog.com.myapp"
-        minSdkVersion 20
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -28,5 +28,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.+'
     compile 'com.android.support:support-v4:23.+'
-    compile 'com.wilddog:wilddog-client-android:0.5.1'
+    compile 'com.wilddog.client:wilddog-sync-android:2.0.0'
 }

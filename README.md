@@ -25,11 +25,12 @@ demo-android-drawing 需要 Wilddog 来同步和存储数据。您可以在这�
 
 ### 相关文档
 
-* [Wilddog 概览](https://z.wilddog.com/overview/introduction)
-* [android SDK快速入门](https://z.wilddog.com/android/quickstart)
-* [android SDK API](https://z.wilddog.com/android/api)
+* [Wilddog 概览](https://docs.wilddog.com/overview/index.html)
+* [Android SDK快速入门](https://docs.wilddog.com/quickstart/sync/android.html)
+* [Android SDK API](https://docs.wilddog.com/api/sync/android.html)
 * [下载页面](https://www.wilddog.com/download/)
 * [Wilddog FAQ](https://z.wilddog.com/questions)
+* [Android Download](http://developer.android.com/sdk/index.html)
 
 
 ### License

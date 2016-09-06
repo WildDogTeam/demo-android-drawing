@@ -166,7 +166,7 @@ public class DrawingView extends View {
 
             mPaint.setColor(Colors.use(p.getValue().toString()));
             mBuffer.drawRect(x, y, x + PIXEL_SIZE, y + PIXEL_SIZE, mPaint);
-//            invalidate();
+         invalidate();
         }
     }
 
