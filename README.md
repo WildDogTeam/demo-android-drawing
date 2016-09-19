@@ -9,7 +9,7 @@ git clone git@github.com:WildDogTeam/demo-android-drawing.git
 cd  demo-android-drawing
 ```
 
-替换DrawingActivity.java 中的 DRAWING_URL为你的应用url.
+替换WilddogDrawingApplication.java 中的 DRAWING_URL为你的应用url.
 
 
 ### 注册 Wilddog
