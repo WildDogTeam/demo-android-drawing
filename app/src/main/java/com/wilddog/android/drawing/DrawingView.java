@@ -13,15 +13,18 @@ import android.view.View;
 
 import com.wilddog.client.ChildEventListener;
 import com.wilddog.client.DataSnapshot;
-import com.wilddog.client.Wilddog;
-import com.wilddog.client.WilddogError;
+
+import com.wilddog.client.SyncError;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.wilddog.android.drawing.util.Colors;
+import com.wilddog.client.SyncReference;
+import com.wilddog.client.WilddogSync;
 
 public class DrawingView extends View {
 
@@ -35,7 +38,7 @@ public class DrawingView extends View {
     private Canvas mBuffer;
     private Bitmap mBitmap;
     private Paint mBitmapPaint;
-    private Wilddog mWilddogRef;
+    private SyncReference mWilddogRef;
     private Path mPath;
     private float mScale = 8.0f;
     private int mCanvasWidth;
@@ -43,23 +46,26 @@ public class DrawingView extends View {
     private final static ConcurrentHashMap<String, Object> unsavedPoints = new ConcurrentHashMap<>();
 
 
-    public DrawingView(Context context, Wilddog ref) {
+    public DrawingView(Context context, SyncReference ref) {
         this(context, ref, 8.0f);
     }
 
-    public DrawingView(Context context, Wilddog ref, int width, int height) {
+    public DrawingView(Context context, SyncReference ref, int width, int height) {
         this(context, ref);
         this.setBackgroundColor(Color.WHITE);
         mCanvasWidth = width;
         mCanvasHeight = height;
+
     }
 
-    public DrawingView(Context context, Wilddog ref, float scale) {
+    public DrawingView(Context context, SyncReference ref, float scale) {
         super(context);
 
         mPath = new Path();
         this.mWilddogRef = ref;
         this.mScale = scale;
+
+
 
         ref.addChildEventListener(new ChildEventListener() {
             @Override
@@ -88,7 +94,7 @@ public class DrawingView extends View {
             }
 
             @Override
-            public void onCancelled(WilddogError WilddogError) {
+            public void onCancelled(SyncError WilddogError) {
                 // No-op
             }
         });
@@ -213,9 +219,9 @@ public class DrawingView extends View {
     }
 
     private void onTouchEnd() {
-        mWilddogRef.updateChildren(unsavedPoints, new Wilddog.CompletionListener() {
+        mWilddogRef.updateChildren(unsavedPoints, new SyncReference.CompletionListener() {
             @Override
-            public void onComplete(WilddogError wilddogError, Wilddog wilddog) {
+            public void onComplete(SyncError wilddogError, SyncReference wilddog) {
                 if (wilddogError != null) {
                     Log.d(TAG, "Save data failed with error:" + wilddogError.getMessage());
                 } else {

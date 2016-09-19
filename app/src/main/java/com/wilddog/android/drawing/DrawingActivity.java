@@ -11,9 +11,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.android.wilddog.com.drawing.R;
-import com.wilddog.client.Wilddog;
 
 import com.wilddog.android.drawing.util.SystemUiHider;
+import com.wilddog.client.SyncReference;
+import com.wilddog.client.WilddogSync;
 
 /**
  * 这是一个从firebase迁移过来的示例
@@ -33,13 +34,13 @@ public class DrawingActivity extends Activity {
 
     private DrawingView mDrawingView;
 
-    private final static String DRAWING_URL = "https://drawing.wilddogio.com";
+   private SyncReference mRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final Activity context = this;
         super.onCreate(savedInstanceState);
-        Wilddog.setAndroidContext(this);
+
 
         setContentView(R.layout.activity_fullscreen);
 
@@ -52,7 +53,7 @@ public class DrawingActivity extends Activity {
         int mBoardWidth = 460 * 2;
         int mBoardHeight = 480 * 2;
 
-        Wilddog mRef = new Wilddog(DRAWING_URL);
+         mRef = WilddogSync.getInstance().getReference();
         mDrawingView = new DrawingView(DrawingActivity.this, mRef, mBoardWidth, mBoardHeight);
 //        mDrawingView.setForegroundGravity(Gravity.CENTER);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(mBoardWidth, mBoardHeight, Gravity.CENTER);
