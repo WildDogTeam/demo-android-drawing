@@ -54,6 +54,7 @@ public class DrawingActivity extends Activity {
         int mBoardHeight = 480 * 2;
 
          mRef = WilddogSync.getInstance().getReference();
+          mRef.removeValue();
         mDrawingView = new DrawingView(DrawingActivity.this, mRef, mBoardWidth, mBoardHeight);
 //        mDrawingView.setForegroundGravity(Gravity.CENTER);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(mBoardWidth, mBoardHeight, Gravity.CENTER);
